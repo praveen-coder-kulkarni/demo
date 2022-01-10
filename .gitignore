@@ -38,3 +38,7 @@ out/
 
 ### JAVA Class Files ###
 *.class
+
+
+### build files ###
+build/*

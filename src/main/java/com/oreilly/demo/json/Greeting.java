@@ -1,12 +1,17 @@
 package com.oreilly.demo.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Greeting {
 
-   private final String message;
+   private String message;
 
-   public Greeting(@JsonProperty("message") String message) {
+   public Greeting() {
+
+   }
+
+   public Greeting(String message) {
 
       this.message = message;
    }
@@ -14,6 +19,11 @@ public class Greeting {
    public String getMessage() {
 
       return message;
+   }
+
+   public void setMessage(String message) {
+
+      this.message = message;
    }
 
    @Override
