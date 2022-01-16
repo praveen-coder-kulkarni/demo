@@ -2,7 +2,6 @@ package com.oreilly.demo.json;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Greeting {
 
    private String message;
