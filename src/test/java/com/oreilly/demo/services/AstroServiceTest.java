@@ -17,9 +17,23 @@ public class AstroServiceTest {
    private AstroService service;
 
    @Test
-   public void getAstronauts() {
+   public void getAstronautsRT() {
 
-      AstroResult result = service.getAstronauts();
+      AstroResult result = service.getAstronautsRT();
+      int number = result.getNumber();
+      List<Assignment> people = result.getPeople();
+      System.out.println("There are " + number + " people in space");
+      result.getPeople().forEach(System.out::println);
+      assertAll(
+            () -> assertTrue(number >= 0),
+            () -> assertEquals(number, people.size())
+      );
+   }
+
+   @Test
+   public void getAstronautsWC() {
+
+      AstroResult result = service.getAstronautsWC();
       int number = result.getNumber();
       List<Assignment> people = result.getPeople();
       System.out.println("There are " + number + " people in space");
